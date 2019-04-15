@@ -1,0 +1,36 @@
+body {
+    background-color: #232323;
+}
+h1 {
+    font-style: italic;
+    color: white;
+}
+.container {
+    width: 600px;
+    margin: 0 auto;
+}
+.square {
+    float: left;
+    width: 30%;
+    height: 30%;
+    background-color: lime;
+    border-radius: 30px;
+    margin: 10px;
+    padding-bottom: 30%
+}
+#message {
+    text-transform: uppercase;
+}
+#stripe {
+    background-color: white;
+    height: 30px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
