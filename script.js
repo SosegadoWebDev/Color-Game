@@ -1,3 +1,44 @@
+var squares = document.querySelectorAll(".square")
+var clickStart = document.querySelector("#message")
+var colorSelectedToWin = document.querySelector("#colorSelected")
+
+function randomColor(){ //genera colores para luego darselos a un array
+    var r = Math.floor(Math.random()*255) 
+    var g = Math.floor(Math.random()*255) 
+    var b = Math.floor(Math.random()*255)
+    return "rgb("+r+", "+g+", "+b+")" 
+}
+function generateRandomColor(num){ //Los colores generados van a ser dados a este array
+    var arreglos = []
+    for (var i=0; i<num; i++){
+        arreglos[i] = randomColor()
+    }
+    return arreglos //regresa y guarda el valor de los recorridos 
+}
+function selectedColor (arrColor){ //Elige color del array y lo asigna como el color elegido
+   var random = Math.floor(Math.random()*arrColor.length)
+   return arrColor[random]
+}
+clickStart.addEventListener("click", function(){
+    //console.log("funciona")
+    clickStart.textContent = "nuevos colores"
+    var colorsBackground = generateRandomColor(6)
+    var colorWinner = selectedColor(colorsBackground)
+    colorSelectedToWin.textContent = colorWinner
+    for(var i = 0; i < squares.length; i++ ) {
+        squares[i].style.backgroundColor = colorsBackground[i]
+    }
+})
+
+
+
+
+
+
+
+
+
+/*
 var color = generateRandomColor(6)
 var colores = document.querySelectorAll(".square")
 var reset = document.querySelector("#reset")
@@ -51,3 +92,4 @@ function generateRandomColor(num){ //Los colores generados van a ser dados a est
     }
     return arreglos //regresa y guarda el valor de los recorridos 
 }
+*/
